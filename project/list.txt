@@ -1,0 +1,202 @@
+UPDATED DEEP UNDERSTANDING CHECKLIST
+=====================================
+
+DOCKER CORE (from before)
+--------------------------
+[ ] Container vs image
+[ ] Layers and caching
+[ ] PID 1 and exec daemon off
+[ ] Dockerfile instructions
+[ ] Build process
+
+NETWORKING (from before)
+------------------------
+[ ] Bridge network
+[ ] Docker DNS
+[ ] Port mapping
+[ ] Why no network:host
+
+STORAGE (from before)
+---------------------
+[ ] Named volumes vs bind mounts
+[ ] driver_opts and device path
+[ ] Shared volumes between containers
+[ ] Data persistence
+
+SECURITY (from before)
+----------------------
+[ ] How secrets work under hood
+[ ] /run/secrets/ mount
+[ ] Why safer than .env
+[ ] .gitignore protection
+
+MANDATORY SERVICES
+------------------
+[ ] MariaDB
+    → mysql_install_db
+    → bootstrap mode
+    → bind-address 0.0.0.0
+    → GRANT PRIVILEGES
+    → why chown mysql:mysql
+
+[ ] Nginx
+    → reverse proxy concept
+    → SSL termination
+    → TLS 1.2/1.3 only
+    → fastcgi_pass
+    → self-signed certificate
+    → openssl flags (-x509, -days, -newkey, -nodes)
+
+[ ] WordPress
+    → php-fpm concept
+    → why socket → TCP port 9000
+    → wp-cli commands
+    → wp-config.php structure
+    → object-cache.php (Redis drop-in)
+    → two users requirement
+    → admin username restriction
+
+BONUS SERVICES
+--------------
+[ ] Redis
+    → RAM vs disk storage
+    → what caching means
+    → cache hit vs miss
+    → maxmemory and why
+    → LRU eviction policy
+    → why bind 0.0.0.0
+    → why protected-mode no
+    → why daemonize no
+    → WP_REDIS_HOST/PORT/PREFIX constants
+    → how object-cache.php intercepts DB calls
+    → redis-cli keys "*" to verify caching
+
+[ ] Adminer
+    → what it is (single PHP file)
+    → php built-in server (-S flag)
+    → why port 8080
+    → how it connects to MariaDB
+    → what you can do with it
+      (browse tables, run SQL, manage users)
+
+[ ] Static Website
+    → simple nginx serving HTML
+    → default nginx root /var/www/html
+    → no config needed for simple setup
+    → port 80
+
+[ ] FTP Server (vsftpd)
+    → what FTP is (file transfer protocol)
+    → what vsftpd is
+    → active vs passive mode
+    → why passive mode (pasv_enable)
+    → what pasv_address does
+    → why pasv_min/max_port
+    → what chroot_local_user does
+    → what allow_writeable_chroot does
+    → what local_root does
+    → how PAM authentication works
+    → why passwd vs chpasswd
+    → why /var/run/vsftpd/empty needed
+    → how to test with curl
+    → how to use FileZilla
+    → FTP response codes:
+      220 = server ready
+      331 = password required
+      230 = login successful
+      257 = current directory
+      150 = sending data
+      226 = transfer complete
+      530 = login failed
+
+[ ] Portainer
+    → what it is (Docker management UI)
+    → why /var/run/docker.sock mount
+    → what Docker socket is
+    → why no credentials at startup
+    → where password is stored (portainer.db)
+    → what portainer.db is (SQLite)
+    → portainer.key and portainer.pub
+    → why /data volume needed
+    → what you can do in Portainer UI
+
+BASH SCRIPTING
+--------------
+[ ] set -e → exit on error
+[ ] exec → replace process, become PID 1
+[ ] $() → command substitution
+[ ] sed -i → edit file in place
+[ ] grep -q → silent search
+[ ] heredoc → write multiline to file
+[ ] while ! → loop until success
+[ ] [ -f file ] → test file exists
+[ ] [ -d dir ] → test directory exists
+[ ] id $USER → check if user exists
+[ ] passwd vs chpasswd → difference
+[ ] useradd vs adduser → difference
+[ ] 2>/dev/null → suppress errors
+[ ] || true → always succeed
+[ ] &>/dev/null → suppress all output
+
+MAKEFILE
+--------
+[ ] .PHONY
+[ ] @ suppress output
+[ ] $$ escape dollar sign
+[ ] 2>/dev/null
+[ ] || true
+[ ] make re-service service=name
+[ ] Variables (DATA_PATH_WP etc)
+
+DOCKER COMPOSE
+--------------
+[ ] services, networks, volumes, secrets
+[ ] depends_on and conditions
+[ ] healthcheck (test, interval, timeout, retries)
+[ ] restart policies
+[ ] env_file vs environment
+[ ] secrets declaration and usage
+[ ] driver_opts for volumes
+[ ] port mapping
+[ ] build context
+
+SUBJECT REQUIREMENTS
+--------------------
+[ ] No latest tag
+[ ] No passwords in Dockerfiles
+[ ] No tail -f or sleep infinity
+[ ] No network:host
+[ ] No --link
+[ ] Containers restart on crash
+[ ] Only port 443 as entrypoint
+[ ] Two WordPress users
+[ ] Admin username no "admin"
+[ ] Volumes at /home/login/data
+[ ] Named volumes not bind mounts
+[ ] One Dockerfile per service
+[ ] secrets/ in .gitignore
+[ ] .env in .gitignore
+
+COMPARISONS FOR README
+----------------------
+[ ] VMs vs Docker
+[ ] Secrets vs Environment Variables
+[ ] Docker Network vs Host Network
+[ ] Docker Volumes vs Bind Mounts
+
+DNS & NETWORKING
+----------------
+[ ] What is DNS
+[ ] DNS resolution flow
+[ ] /etc/hosts override
+[ ] How Docker DNS works internally
+[ ] Why sojammal.42.fr works locally
+[ ] How to set up on VM
+
+SYSTEM ARCHITECTURE
+-------------------
+[ ] What is a reverse proxy
+[ ] What is a microservices architecture
+[ ] How your Inception diagram works
+[ ] Request flow from browser to database
+[ ] How caching fits in the flow

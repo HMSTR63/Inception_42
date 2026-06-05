@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soufiane Jammali - ATS Resume</title>
+    <style>
+        /* Strict ATS-friendly CSS Styling */
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 11pt;
+            color: #000000;
+            background-color: #ffffff;
+            line-height: 1.5;
+            max-width: 8.5in; /* Standard US Letter width */
+            margin: 0 auto;
+            padding: 0.5in;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Header Section */
+        header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            font-size: 18pt;
+            text-transform: uppercase;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .contact-info {
+            font-size: 11pt;
+            margin-bottom: 15px;
+        }
+
+        .contact-info a {
+            color: #000000;
+            text-decoration: none;
+        }
+
+        /* Section Headings */
+        h2 {
+            font-size: 12pt;
+            text-transform: uppercase;
+            font-weight: bold;
+            border-bottom: 1px solid #000000;
+            margin-top: 20px;
+            margin-bottom: 10px;
+            padding-bottom: 2px;
+        }
+
+        /* Content Formatting */
+        p {
+            margin-bottom: 10px;
+            text-align: justify;
+        }
+
+        .entry {
+            margin-bottom: 15px;
+        }
+
+        .entry-header {
+            display: flex;
+            justify-content: space-between;
+            font-weight: bold;
+            margin-bottom: 2px;
+        }
+
+        .entry-subtitle {
+            display: flex;
+            justify-content: space-between;
+            font-style: italic;
+            margin-bottom: 5px;
+        }
+
+        ul {
+            padding-left: 20px;
+            margin-bottom: 10px;
+        }
+
+        li {
+            margin-bottom: 5px;
+            text-align: justify;
+        }
+
+        .bold-text {
+            font-weight: bold;
+        }
+
+        /* Print Button - Hidden when printing */
+        #print-btn {
+            display: block;
+            margin: 0 auto 20px auto;
+            padding: 10px 20px;
+            background-color: #000;
+            color: #fff;
+            border: none;
+            font-weight: bold;
+            cursor: pointer;
+            font-family: Arial, sans-serif;
+        }
+
+        #print-btn:hover {
+            background-color: #333;
+        }
+
+        @media print {
+            body {
+                padding: 0;
+                margin: 0;
+            }
+            #print-btn {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <button id="print-btn" onclick="window.print()">Print / Save as PDF</button>
+
+    <header>
+        <h1>SOUFIANE JAMMALI</h1> <!--[cite: 1] -->
+        <div class="contact-info">
+            <a href="mailto:soufianejamali14@gmail.com">soufianejamali14@gmail.com</a> | LinkedIn | github.com/HMSTR63 | Casablanca, Morocco <!--[cite: 1] -->
+        </div>
+    </header>
+
+    <section>
+        <h2>PROFESSIONAL SUMMARY</h2>
+        <p>Software Engineering student at the 42 Network (1337) specializing in systems programming, custom parsing engines, and low-level architecture. <!--[cite: 1] --> Proficient in C, C++, and Bash, with hands-on experience building complex logic and network servers from scratch. <!--[cite: 1] --> Deeply passionate about Formula 1, aiming to bring my software engineering and logic-building skills to the motorsport industry to optimize telemetry infrastructure and trackside operations. <!--[cite: 1] --></p>
+    </section>
+
+    <section>
+        <h2>TECHNICAL SKILLS</h2>
+        <ul>
+            <li><span class="bold-text">Languages:</span> C, C++, Bash <!--[cite: 1] --></li>
+            <li><span class="bold-text">DevOps & Tools:</span> Docker, Git, Linux (Debian, Alpine), n8n <!--[cite: 1] --></li>
+            <li><span class="bold-text">Spoken Languages:</span> Arabic (Native), English (Intermediate) <!--[cite: 1] --></li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>PROFESSIONAL EXPERIENCE</h2>
+        
+        <div class="entry">
+            <div class="entry-header">
+                <span>Software Engineering Trainee</span>
+                <span>Present</span> <!--[cite: 1] -->
+            </div>
+            <div class="entry-subtitle">
+                <span>1337 School (42 Network) Project-Based Curriculum</span>
+                <span>Khouribga, Morocco</span> <!--[cite: 1] -->
+            </div>
+            <ul>
+                <li><span class="bold-text">ft_irc (C++98):</span> Developed the core business logic and state management for a custom IRC server operating according to RFC 2812 specifications. <!--[cite: 1] --> Engineered the command execution engine for complex user commands. <!--[cite: 1] --></li>
+                <li><span class="bold-text">Minishell (C):</span> Engineered a comprehensive parsing engine for a custom UNIX command-line interpreter. <!--[cite: 1] --> Implemented a robust state machine utilizing enums to accurately categorize variables and ensure memory safety. <!--[cite: 1] --></li>
+                <li><span class="bold-text">Inception (Docker):</span> Architecting a multi-container environment. <!--[cite: 1] --> Developing custom Bash scripts to build, initialize, and securely configure distinct services on Alpine Linux from the ground up. <!--[cite: 1] --></li>
+            </ul>
+        </div>
+    </section>
+
+    <section>
+        <h2>EDUCATION</h2>
+        
+        <div class="entry">
+            <div class="entry-header">
+                <span>1337 School (42 Network)</span>
+                <span>Present</span> <!--[cite: 1] -->
+            </div>
+            <div class="entry-subtitle">
+                <span>Software Engineering Degree (Equivalent)</span>
+                <span>Khouribga, Morocco</span> <!--[cite: 1] -->
+            </div>
+            <ul>
+                <li><span class="bold-text">Core Curriculum:</span> Intensive peer-to-peer computer science program focusing on system administration, logic implementation, and low-level software architecture. <!--[cite: 1] --></li>
+                <li><span class="bold-text">Relevant Coursework:</span> Data Structures & Algorithms, Network Programming (Sockets), Object-Oriented Programming, Unix/Linux Environments. <!--[cite: 1] --></li>
+            </ul>
+        </div>
+    </section>
+
+    <section>
+        <h2>SOFT SKILLS & INTERESTS</h2>
+        <ul>
+            <li><span class="bold-text">Soft Skills:</span> Complex Problem Solving, Peer-to-Peer Collaboration, Adaptability, Self-Directed Learning. <!--[cite: 1] --></li>
+            <li><span class="bold-text">Interests:</span> Formula 1 (Motorsport Telemetry & High-Performance Engineering), Automation, Systems Architecture. <!--[cite: 1] --></li>
+        </ul>
+    </section>
+
+</body>
+</html>
