@@ -10,13 +10,13 @@ volumes:
     driver_opts:
       type: none
       o: bind
-      device: /Users/hmstr./data/wordpress
+      device: ${HOME}/data/wordpress
   mariadb:
     driver: local
     driver_opts:
       type: none
       o: bind
-      device: /Users/hmstr./data/mariadb
+      device: ${HOME}/data/mariadb
   portainer:
     driver: local
 

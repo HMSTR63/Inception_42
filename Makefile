@@ -1,5 +1,5 @@
-DATA_PATH_WP	= /Users/hmstr./data/wordpress
-DATA_PATH_DB	= /Users/hmstr./data/mariadb
+DATA_PATH_WP	= $(HOME)/data/wordpress
+DATA_PATH_DB	= $(HOME)/data/mariadb
 
 all: up
 
