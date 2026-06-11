@@ -36,9 +36,6 @@ fi
 # ─────────────────────────────────────────
 # STEP 4: Clone project
 # ─────────────────────────────────────────
-echo "Cloning project..."
-git clone git@github.com:HMSTR63/inception.git
-cd inception
 
 # ─────────────────────────────────────────
 # STEP 5: Create secrets
